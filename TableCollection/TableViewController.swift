@@ -32,8 +32,27 @@ class TableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        //classes are refernces types
+        //a class uses an indirecr storage
+        //So even though this is a let constannt you can
+        //change its properties because label is a class instance
+        
+        //label is a pointer, so it has the address of memory
+        //that stores all the information for a UILabel instance
+        let label = UILabel()
+        label.textAlignment = .center
+        label.backgroundColor = .black
+        label.textColor = .white
+        label.text = ColorHelper.shared.sectionNameFor(indexPath: IndexPath(row: 0, section: section))
+     return label
+    }
 
-
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return ColorHelper.shared.sectionTitles()
+    }
 
     
 
