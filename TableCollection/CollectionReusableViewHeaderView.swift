@@ -9,5 +9,6 @@
 import UIKit
 
 class CollectionReusableViewHeaderView: UICollectionReusableView {
-        
+        static let reuseIdentifier = "header"
+    @IBOutlet var nameLabel: UILabel!
 }

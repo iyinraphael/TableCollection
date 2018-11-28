@@ -28,8 +28,6 @@ class TableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reuseIdentifier, for: indexPath) as? TableViewCell else { fatalError("unable to deque proper cell")}
         cell.nameLable.text = ColorHelper.shared.colorNameFor(indexPath: indexPath)
         cell.swatchView.backgroundColor = ColorHelper.shared.colorFor(indexPath: indexPath)
-
-
         return cell
     }
     
